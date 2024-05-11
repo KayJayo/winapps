@@ -1,9 +1,6 @@
 # Allow powershell scripts from anywhere
 Set-ExecutionPolicy unrestricted -Force
 
-# Chocolatey install
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-
 # Winget install
 $repoUrl = "https://api.github.com/repos/microsoft/winget-cli/releases/latest"
 $latestRelease = Invoke-WebRequest -Uri $repoUrl -UseBasicParsing | ConvertFrom-Json
